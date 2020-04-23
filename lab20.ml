@@ -5,7 +5,7 @@ open Graphics ;;
   
 (* threshold thershold image -- image where pixels above the threshold
 value are black *)
-let threshold img threshold =
+let threshold img  threshold  =
   List.map  (fun row -> List.map (fun v -> if v <= threshold then 0. else 1.)
                                  row) img
        
@@ -28,13 +28,13 @@ let dither img =
                  else 0.) row)
     img
     
-let mona = Monalisa.image ;;
-  
+    
+let mona = Monalisa.image ;; 
   depict mona ;;
     
-  let mona_threshold = threshold mona 0.75 ;;
-    depict mona_threshold ;;
+let mona_threshold = threshold mona 0.75 ;;
+  depict mona_threshold ;;
       
-    let mona_dither = dither mona ;;
-      depict mona_dither ;;
+let mona_dither = dither mona ;;
+  depict mona_dither ;;
            
